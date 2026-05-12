@@ -1,180 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Before and after photos of dental work by Dr. Fran Bihary, DMD in Kinnelon, NJ — veneers, cosmetic bonding, smile restorations, and more." />
-  <title>Before &amp; After Gallery | Fran Bihary DMD</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Before and after gallery — Dr. Fran Bihary DMD, Kinnelon NJ. Veneers, cosmetic bonding, smile restorations."/>
+  <title>Gallery | Fran Bihary DMD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header" id="top">
-    <div class="header-inner">
-      <a href="index.html" class="logo" aria-label="Fran Bihary DMD Home">
-        <span class="logo-name">Dr. Fran Bihary</span>
-        <span class="logo-title">DMD &nbsp;·&nbsp; Kinnelon, NJ</span>
-      </a>
-      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
-      <nav class="site-nav" aria-label="Main navigation">
-        <ul>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="gallery.html" class="active">Gallery</a></li>
-          <li><a href="index.html#new-patients">New Patients</a></li>
-          <li><a href="index.html#contact" class="nav-cta">Book Appointment</a></li>
-        </ul>
-      </nav>
+<!-- ANNOUNCE -->
+<div class="announce-bar">
+  <div class="marquee-track">
+    <div class="marquee-inner">
+      <span>Accepting New Patients</span>
+      <span class="dot">◆</span>
+      <span>Kinnelon, NJ — Suite 14</span>
+      <span class="dot">◆</span>
+      <span>Call (973) 492-0533</span>
+      <span class="dot">◆</span>
+      <span>Preventive · Restorative · Cosmetic</span>
+      <span class="dot">◆</span>
+      <span>Accepting New Patients</span>
+      <span class="dot">◆</span>
+      <span>Kinnelon, NJ — Suite 14</span>
+      <span class="dot">◆</span>
+      <span>Call (973) 492-0533</span>
+      <span class="dot">◆</span>
+      <span>Preventive · Restorative · Cosmetic</span>
+      <span class="dot">◆</span>
     </div>
-  </header>
+  </div>
+</div>
 
-  <!-- PAGE HERO -->
-  <section class="page-hero">
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">FB</span>
+      <div class="logo-text">
+        <span class="logo-name">Fran Bihary</span>
+        <span class="logo-sub">DMD &nbsp;·&nbsp; Kinnelon, NJ</span>
+      </div>
+    </a>
+    <nav class="nav" id="nav">
+      <a href="index.html#services" class="nav-link">Services</a>
+      <a href="index.html#about" class="nav-link">About</a>
+      <a href="gallery.html" class="nav-link active">Gallery</a>
+      <a href="index.html#patients" class="nav-link">New Patients</a>
+      <a href="index.html#contact" class="nav-cta">Book a Visit</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1800&q=80&auto=format&fit=crop" alt="Dental office interior" loading="eager"/>
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="page-hero-content">
+    <p class="hero-eyebrow">Our Work</p>
+    <h1 class="hero-title">Before &amp; After<br/><em>Gallery</em></h1>
+    <p class="hero-sub">Real patients. Real results. Every transformation begins with a single conversation.</p>
+  </div>
+</section>
+
+<!-- FILTER -->
+<div class="filter-bar">
+  <div class="container">
+    <div class="filter-pills" role="group" aria-label="Filter by procedure">
+      <button class="pill active" data-filter="all">All Work</button>
+      <button class="pill" data-filter="bonding">Cosmetic Bonding</button>
+      <button class="pill" data-filter="veneers">Veneers</button>
+      <button class="pill" data-filter="restoration">Restorations</button>
+    </div>
+  </div>
+</div>
+
+<!-- GALLERY GRID -->
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="gfull-grid">
+
+      <article class="gfull-item" data-cat="bonding">
+        <div class="gfull-img">
+          <img src="https://static.wixstatic.com/media/786f3e_0ecd608fa4eb4d1784d895df3b28bad3~mv2.jpg/v1/crop/x_196,y_36,w_1977,h_1069/fill/w_900,h_540,al_c,q_80/Facetune_02-10-2025-19-41-13_edited.jpg" alt="Cosmetic bonding before and after" loading="lazy"/>
+          <div class="gfull-tag">Cosmetic Bonding</div>
+        </div>
+        <div class="gfull-body">
+          <h3>Cosmetic Bonding</h3>
+          <p>Composite bonding to repair chipped edges and close gaps — completed in a single appointment with no drilling required.</p>
+        </div>
+      </article>
+
+      <article class="gfull-item" data-cat="veneers">
+        <div class="gfull-img">
+          <img src="https://static.wixstatic.com/media/786f3e_6fd56ed635164ffb814417d7b7864031~mv2.png/v1/crop/x_0,y_177,w_2165,h_1336/fill/w_900,h_540,al_c,q_85/Facetune_02-10-2025-19-46-54_heic.png" alt="Porcelain veneers before and after" loading="lazy"/>
+          <div class="gfull-tag">Porcelain Veneers</div>
+        </div>
+        <div class="gfull-body">
+          <h3>Porcelain Veneers</h3>
+          <p>Ultra-thin porcelain veneers placed over the upper teeth, creating a brighter, more uniform smile with a completely natural appearance.</p>
+        </div>
+      </article>
+
+      <article class="gfull-item" data-cat="restoration">
+        <div class="gfull-img">
+          <img src="https://static.wixstatic.com/media/786f3e_598c2609505e4237a59a06053786e811~mv2.jpg/v1/crop/x_0,y_122,w_2270,h_1114/fill/w_900,h_540,al_c,q_80/Facetune_08-10-2025-19-52-46_edited.jpg" alt="Smile restoration before and after" loading="lazy"/>
+          <div class="gfull-tag">Smile Restoration</div>
+        </div>
+        <div class="gfull-body">
+          <h3>Smile Restoration</h3>
+          <p>Bonding and whitening combined to address discoloration and minor chips — restoring a naturally vibrant result.</p>
+        </div>
+      </article>
+
+      <article class="gfull-item" data-cat="restoration">
+        <div class="gfull-img">
+          <img src="https://static.wixstatic.com/media/786f3e_4cda293f59d34092a415537a7bfd289e~mv2.jpg/v1/crop/x_0,y_0,w_2384,h_1182/fill/w_900,h_540,al_c,q_80/786f3e_4cda293f59d34092a415537a7bfd289e~mv2.jpg" alt="Full smile makeover before and after" loading="lazy"/>
+          <div class="gfull-tag">Smile Makeover</div>
+        </div>
+        <div class="gfull-body">
+          <h3>Full Smile Makeover</h3>
+          <p>Comprehensive cosmetic treatment combining veneers and bonding for a complete, harmonious transformation.</p>
+        </div>
+      </article>
+
+      <article class="gfull-item" data-cat="bonding">
+        <div class="gfull-img">
+          <img src="https://static.wixstatic.com/media/786f3e_e021e7fb30aa4c3f87cbed78f0ebd85a~mv2.jpg/v1/crop/x_87,y_129,w_2385,h_1505/fill/w_900,h_540,al_c,q_80/786f3e_e021e7fb30aa4c3f87cbed78f0ebd85a~mv2.jpg" alt="Gap closure bonding" loading="lazy"/>
+          <div class="gfull-tag">Cosmetic Bonding</div>
+        </div>
+        <div class="gfull-body">
+          <h3>Gap Closure — Bonding</h3>
+          <p>Composite resin bonding to naturally close a diastema (gap between front teeth) — seamless result in a single visit.</p>
+        </div>
+      </article>
+
+      <article class="gfull-item" data-cat="veneers">
+        <div class="gfull-img">
+          <img src="https://static.wixstatic.com/media/786f3e_2e460b184d394f22bbd1531b0ac9aba8~mv2.png/v1/fill/w_900,h_540,al_c,q_85/786f3e_2e460b184d394f22bbd1531b0ac9aba8~mv2.png" alt="Veneer smile design" loading="lazy"/>
+          <div class="gfull-tag">Veneers</div>
+        </div>
+        <div class="gfull-body">
+          <h3>Custom Veneer Design</h3>
+          <p>Porcelain veneers tailored to the patient's facial proportions — bold yet completely natural-looking result.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section section--dark">
+  <div class="container text-center">
+    <div class="section-label section-label--light">Ready?</div>
+    <h2 class="section-title section-title--light">Your Transformation<br/><em>Starts Here</em></h2>
+    <p style="color:rgba(255,255,255,0.65);max-width:500px;margin:0 auto 2.5rem;">Schedule a consultation with Dr. Bihary to explore what's possible for your smile.</p>
+    <a href="index.html#contact" class="btn-gold">Request a Consultation</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark logo-mark--sm">FB</span>
+      <span class="footer-name">Fran Bihary, DMD</span>
+      <span class="footer-sub">Kinnelon's trusted dental practice</span>
+      <address>
+        170 Kinnelon Rd, Suite 14<br/>
+        Kinnelon, NJ 07405<br/>
+        <a href="tel:9734920533">(973) 492-0533</a><br/>
+        <a href="mailto:frandr@optonline.net">frandr@optonline.net</a>
+      </address>
+    </div>
+    <div class="footer-nav">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#about">About Dr. Bihary</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="index.html#patients">New Patients</a></li>
+        <li><a href="index.html#insurance">Insurance</a></li>
+        <li><a href="index.html#contact">Book an Appointment</a></li>
+      </ul>
+    </div>
+    <div class="footer-hours-col">
+      <h4>Office Hours</h4>
+      <p class="footer-hours-tbd">Hours coming soon.<br/><a href="tel:9734920533">Call us to confirm.</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
     <div class="container">
-      <p class="eyebrow">Real Results</p>
-      <h1>Before &amp; After Gallery</h1>
-      <p>Every transformation begins with a conversation. Browse our work and imagine what's possible for your smile.</p>
+      <p>&copy; <span class="yr"></span> Fran Bihary DMD &nbsp;·&nbsp; All rights reserved</p>
     </div>
-  </section>
+  </div>
+</footer>
 
-  <!-- GALLERY -->
-  <section class="section" id="gallery">
-    <div class="container">
-
-      <div class="gallery-filter" role="group" aria-label="Filter gallery by procedure">
-        <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="bonding">Cosmetic Bonding</button>
-        <button class="filter-btn" data-filter="veneers">Veneers</button>
-        <button class="filter-btn" data-filter="restoration">Restorations</button>
-      </div>
-
-      <div class="gallery-full-grid">
-
-        <figure class="gallery-full-item" data-category="bonding">
-          <div class="gallery-img-wrap">
-            <img src="https://static.wixstatic.com/media/786f3e_0ecd608fa4eb4d1784d895df3b28bad3~mv2.jpg/v1/crop/x_196,y_36,w_1977,h_1069/fill/w_900,h_490,al_c,q_80/Facetune_02-10-2025-19-41-13_edited.jpg" alt="Cosmetic bonding — before and after front teeth" loading="lazy" />
-          </div>
-          <figcaption>
-            <h3>Cosmetic Bonding</h3>
-            <p>Minimally invasive composite bonding to repair chipped edges and close gaps — completed in a single visit.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-full-item" data-category="veneers">
-          <div class="gallery-img-wrap">
-            <img src="https://static.wixstatic.com/media/786f3e_6fd56ed635164ffb814417d7b7864031~mv2.png/v1/crop/x_0,y_177,w_2165,h_1336/fill/w_900,h_556,al_c,q_85/Facetune_02-10-2025-19-46-54_heic.png" alt="Porcelain veneers — before and after" loading="lazy" />
-          </div>
-          <figcaption>
-            <h3>Porcelain Veneers</h3>
-            <p>Ultra-thin porcelain veneers placed over the upper teeth, resulting in a brighter, more uniform smile with a completely natural appearance.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-full-item" data-category="restoration">
-          <div class="gallery-img-wrap">
-            <img src="https://static.wixstatic.com/media/786f3e_598c2609505e4237a59a06053786e811~mv2.jpg/v1/crop/x_0,y_122,w_2270,h_1114/fill/w_900,h_441,al_c,q_80/Facetune_08-10-2025-19-52-46_edited.jpg" alt="Smile restoration — before and after" loading="lazy" />
-          </div>
-          <figcaption>
-            <h3>Smile Restoration</h3>
-            <p>A combination of bonding and whitening to restore a naturally vibrant smile, addressing discoloration and minor chips throughout.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-full-item" data-category="restoration">
-          <div class="gallery-img-wrap">
-            <img src="https://static.wixstatic.com/media/786f3e_4cda293f59d34092a415537a7bfd289e~mv2.jpg/v1/crop/x_0,y_0,w_2384,h_1182/fill/w_900,h_447,al_c,q_80/786f3e_4cda293f59d34092a415537a7bfd289e~mv2.jpg" alt="Full smile makeover before and after" loading="lazy" />
-          </div>
-          <figcaption>
-            <h3>Full Smile Makeover</h3>
-            <p>Comprehensive cosmetic treatment combining veneers and bonding for a complete, harmonious smile transformation.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-full-item" data-category="bonding">
-          <div class="gallery-img-wrap">
-            <img src="https://static.wixstatic.com/media/786f3e_e021e7fb30aa4c3f87cbed78f0ebd85a~mv2.jpg/v1/crop/x_87,y_129,w_2385,h_1505/fill/w_900,h_568,al_c,q_80/786f3e_e021e7fb30aa4c3f87cbed78f0ebd85a~mv2.jpg" alt="Cosmetic bonding gap closure" loading="lazy" />
-          </div>
-          <figcaption>
-            <h3>Gap Closure — Bonding</h3>
-            <p>Composite resin bonding used to naturally close a diastema (gap between front teeth) for a seamless result in one appointment.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-full-item" data-category="veneers">
-          <div class="gallery-img-wrap">
-            <img src="https://static.wixstatic.com/media/786f3e_2e460b184d394f22bbd1531b0ac9aba8~mv2.png/v1/fill/w_900,h_516,al_c,q_85/786f3e_2e460b184d394f22bbd1531b0ac9aba8~mv2.png" alt="Veneers smile transformation" loading="lazy" />
-          </div>
-          <figcaption>
-            <h3>Veneer Smile Design</h3>
-            <p>Custom-designed porcelain veneers tailored to the patient's facial proportions, delivering a bold yet completely natural-looking result.</p>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-full-item" data-category="restoration">
-          <div class="gallery-img-wrap">
-            <img src="https://static.wixstatic.com/media/786f3e_a06ae3075e5d48ff8df411c83d48b204~mv2.jpg/v1/fill/w_900,h_561,al_c,q_80/786f3e_a06ae3075e5d48ff8df411c83d48b204~mv2.jpg" alt="Crown and bridge restoration" loading="lazy" />
-          </div>
-          <figcaption>
-            <h3>Crown &amp; Bridge</h3>
-            <p>Custom crown and bridge work to restore full function and a natural-looking appearance following tooth loss.</p>
-          </figcaption>
-        </figure>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="section section-alt">
-    <div class="container cta-block">
-      <h2>Ready for Your Own Transformation?</h2>
-      <p>Schedule a consultation with Dr. Bihary to explore what's possible for your smile.</p>
-      <a href="index.html#contact" class="btn btn-primary">Request a Consultation</a>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-name">Dr. Fran Bihary, DMD</span>
-        <span class="footer-tagline">Kinnelon's trusted dental practice</span>
-        <address>
-          170 Kinnelon Rd, Suite 14<br/>
-          Kinnelon, NJ 07405<br/>
-          <a href="tel:9734920533">(973) 492-0533</a><br/>
-          <a href="mailto:frandr@optonline.net">frandr@optonline.net</a>
-        </address>
-      </div>
-      <div class="footer-links">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html#services">Services</a></li>
-          <li><a href="index.html#about">About Dr. Bihary</a></li>
-          <li><a href="gallery.html">Before &amp; After Gallery</a></li>
-          <li><a href="index.html#new-patients">New Patients</a></li>
-          <li><a href="index.html#insurance">Insurance</a></li>
-          <li><a href="index.html#contact">Contact &amp; Directions</a></li>
-        </ul>
-      </div>
-      <div class="footer-hours">
-        <h4>Office Hours</h4>
-        <p class="footer-hours-tbd">Hours to be listed here — <a href="tel:9734920533">call us</a> to confirm</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        <p>&copy; <span class="year"></span> Fran Bihary DMD. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
