@@ -1,141 +1,117 @@
-/* ============================================================
-   FRAN BIHARY DMD — MAIN JAVASCRIPT
-   ============================================================ */
+/* ================================================================
+   FRAN BIHARY DMD — main.js
+   ================================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  /* ---- Footer year ---- */
-  document.querySelectorAll('#year, .year').forEach(el => {
+  /* ── Year ── */
+  document.querySelectorAll('#yr, .yr').forEach(el => {
     el.textContent = new Date().getFullYear();
   });
 
-  /* ---- Mobile nav toggle ---- */
-  const toggle = document.querySelector('.nav-toggle');
-  const nav    = document.querySelector('.site-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', () => {
+  /* ── Sticky header shadow ── */
+  const header = document.getElementById('header');
+  if (header) {
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+
+  /* ── Mobile nav ── */
+  const burger = document.getElementById('burger');
+  const nav    = document.getElementById('nav');
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
       const open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', open);
-      toggle.classList.toggle('active', open);
+      burger.classList.toggle('open', open);
+      burger.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
     });
-    nav.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
+    nav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
         nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.classList.remove('active');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       });
     });
-    document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+    document.addEventListener('click', e => {
+      if (!nav.contains(e.target) && !burger.contains(e.target)) {
         nav.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.classList.remove('active');
+        burger.classList.remove('open');
+        burger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
     });
   }
 
-  /* ---- Sticky header shadow on scroll ---- */
-  const header = document.querySelector('.site-header');
-  if (header) {
-    const onScroll = () => {
-      header.style.boxShadow = window.scrollY > 8
-        ? '0 4px 20px rgba(28,43,53,0.12)'
-        : '0 2px 8px rgba(28,43,53,0.08)';
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-  }
-
-  /* ---- Appointment form ---- */
-  const form    = document.getElementById('appointmentForm');
-  const success = document.getElementById('formSuccess');
-  if (form && success) {
-    form.addEventListener('submit', (e) => {
+  /* ── Smooth scroll with header offset ── */
+  document.querySelectorAll('a[href*="#"]').forEach(link => {
+    link.addEventListener('click', e => {
+      const raw  = link.getAttribute('href');
+      const hash = raw.includes('#') ? raw.split('#')[1] : null;
+      if (!hash) return;
+      const target = document.getElementById(hash);
+      if (!target) return;
       e.preventDefault();
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      const btn = form.querySelector('button[type="submit"]');
-      btn.disabled = true;
-      btn.textContent = 'Sending…';
-      setTimeout(() => {
-        form.reset();
-        success.hidden = false;
-        success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        btn.disabled = false;
-        btn.textContent = 'Submit Request';
-      }, 1000);
+      const hh = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hh')) || 76;
+      const y  = target.getBoundingClientRect().top + window.scrollY - hh - 12;
+      window.scrollTo({ top: y, behavior: 'smooth' });
     });
+  });
+
+  /* ── Fade-in on scroll ── */
+  const fadeTargets = document.querySelectorAll(
+    '.service-card, .testimonial-card, .np-card, .gfull-item, .gtease-item, .stat-item, .pillar'
+  );
+  if ('IntersectionObserver' in window && fadeTargets.length) {
+    fadeTargets.forEach(el => el.classList.add('fade-up'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    fadeTargets.forEach(el => io.observe(el));
   }
 
-  /* ---- Gallery filter ---- */
-  const filterBtns = document.querySelectorAll('.filter-btn');
-  const galleryItems = document.querySelectorAll('.gallery-full-item');
-  if (filterBtns.length && galleryItems.length) {
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        galleryItems.forEach(item => {
-          if (filter === 'all' || item.dataset.category === filter) {
-            item.hidden = false;
-          } else {
-            item.hidden = true;
-          }
+  /* ── Gallery filter ── */
+  const pills   = document.querySelectorAll('.pill');
+  const gItems  = document.querySelectorAll('.gfull-item');
+  if (pills.length && gItems.length) {
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        const f = pill.dataset.filter;
+        gItems.forEach(item => {
+          item.hidden = f !== 'all' && item.dataset.cat !== f;
         });
       });
     });
   }
 
-  /* ---- Fade-in on scroll ---- */
-  const fadeEls = document.querySelectorAll(
-    '.service-card, .testimonial, .gallery-item, .gallery-full-item, .np-card'
-  );
-  if ('IntersectionObserver' in window && fadeEls.length) {
-    const style = document.createElement('style');
-    style.textContent = `
-      .fade-hidden { opacity: 0; transform: translateY(20px); }
-      .fade-in { animation: fadeUp 0.5s ease forwards; }
-      @keyframes fadeUp {
-        to { opacity: 1; transform: translateY(0); }
-      }
-    `;
-    document.head.appendChild(style);
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
-        if (entry.isIntersecting) {
-          const el = entry.target;
-          el.style.animationDelay = `${i * 0.06}s`;
-          el.classList.remove('fade-hidden');
-          el.classList.add('fade-in');
-          observer.unobserve(el);
-        }
-      });
-    }, { threshold: 0.12 });
-
-    fadeEls.forEach(el => {
-      el.classList.add('fade-hidden');
-      observer.observe(el);
+  /* ── Appointment form ── */
+  const form = document.getElementById('apptForm');
+  const ok   = document.getElementById('formOK');
+  if (form && ok) {
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      /* Replace setTimeout with real Formspree/Netlify fetch when ready */
+      setTimeout(() => {
+        form.reset();
+        ok.hidden = false;
+        ok.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        btn.disabled = false;
+        btn.textContent = 'Submit Appointment Request';
+      }, 900);
     });
   }
-
-  /* ---- Smooth scroll for anchor links ---- */
-  document.querySelectorAll('a[href*="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const hash = link.getAttribute('href').split('#')[1];
-      if (!hash) return;
-      const target = document.getElementById(hash);
-      if (target) {
-        e.preventDefault();
-        const headerOffset = parseInt(
-          getComputedStyle(document.documentElement).getPropertyValue('--header-h')
-        ) || 72;
-        const y = target.getBoundingClientRect().top + window.scrollY - headerOffset - 16;
-        window.scrollTo({ top: y, behavior: 'smooth' });
-      }
-    });
-  });
 
 });
